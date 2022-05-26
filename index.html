@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Megakit</title>
+<!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- css -->
+<link rel="stylesheet" href="css/style.css">
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/b19df42650.js" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link
+   rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+ />
+
+ <!-- jquery -->
+
+<!-- fade -->
+<script>
+$(window).on("load",function() {
+$(window).scroll(function() {
+  var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+  $(".fade").each(function() {
+    /* Check the location of each desired element */
+    var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+    /* If the element is completely within bounds of the window, fade it in */
+    if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+      if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+    } else { //object goes out of view (scrolling up)
+      if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+    }
+  });
+}).scroll(); //invoke scroll-handler on page-load
+});
+</script>
+<!-- number counter -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+ function counter(id, start, end, duration) {
+  let obj = document.getElementById(id),
+   current = start,
+   range = end - start,
+   increment = end > start ? 1 : -1,
+   step = Math.abs(Math.floor(duration / range)),
+   timer = setInterval(() => {
+    current += increment;
+    obj.textContent = current;
+    if (current == end) {
+     clearInterval(timer);
+    }
+   }, step);
+ }
+ counter("count1", 1000, 1730, 3000);
+ counter("count2", 100, 125, 4000);
+ counter("count3", 0, 39, 2000);
+ counter("count4", 0, 14, 1500);
+});
+</script>
+
+  </head>
+
+  <body>
+    <header class="navigation">
+      <div class="header-top">
+        <div class="container">
+  <div class="row justify-content-between align-items-centre py-2">
+    <div class="col-lg-2 col-md-4  ">
+      <div class=" header-top-social">
+        <i class="fa-brands fa-facebook-square fa-xl"></i>
+        <i class="fa-brands fa-twitter-square fa-xl"></i>
+        <i class="fa-brands fa-github fa-xl"></i>
+      </div>
+
+    </div>
+
+    <div class="col-lg-10  col-md-8 top-info ">
+      <a class="px-3" href="#">Call Us : +23-4456-7890</a>
+      <i class="fa-solid fa-envelope fa-xl"></i> <a href="#">Support @gmail.com</a>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0 py-3">
+  <div class="container">
+    <a class="navbar-brand me-0" href="#">MEGAKIT</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">HOME</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ABOUT
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Our Company</a></li>
+            <li><a class="dropdown-item" href="#">Pricing</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sub-menu</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">SERVICES</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">PORTFOLIO</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            BLOG
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Blog grid</a></li>
+            <li><a class="dropdown-item" href="#">Blog single</a></li>
+            <li><a class="dropdown-item" href="#">Blog with sidebar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sub-menu</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">CONTACT</a>
+        </li>
+
+      </ul>
+      <form class="d-flex">
+                <button class="btn btn-outline-danger" type="submit">GET A QUOTE</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    </header>
+
+    <section class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 banner-intro animate__animated animate__zoomIn">
+            <h5>Prepare For New Future</h5>
+            <h1>Our Work is <br>
+               Presentation of our <br>
+               Capabilities
+            </h1>
+              <button class="btn  bnr-btn" type="submit">Get Started <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- third -->
+    <section class="third">
+      <div class="container fade ">
+        <h5>We are creative & expert people</h5>
+        <h2>We work with business & provide
+          <br> solution to client with their business
+          <br> problem</h2>
+          <div class="row">
+    <div class="col-lg-4 col-sm-12">
+      <i class="fa-solid fa-desktop fa-4x"></i>
+      <h4>Modern & Responsive design</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, ducimus.</p>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <i class="fa-solid fa-award fa-4x"></i>
+      <h4>Awarded licensed company</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, ducimus.</p>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <i class="fa-solid fa-layer-group fa-4x"></i>
+      <h4>Build your website Professionally</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, ducimus.</p>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+    </section>
+
+    <!-- fourth -->
+
+    <section class="four">
+      <div class="container">
+        <div class="row ">
+       <div class="col-lg-5 col-sm-12 animate__animated animate__slideInLeft">
+         <img class="img-fluid fourth-img"src="image/home-2.jpg" alt="">
+       </div>
+       <div class="col-lg-7 col-sm-12  animate__animated animate__slideInRight">
+         <h5>What we are</h5>
+         <h2>We are dynamic team of <br>
+           creative people</h2>
+           <h4><i class="fa-solid fa-fill-drip"></i>We are Perfect Solution</h4>
+           <p>We provide consulting services in the area of IFRS and management reporting,
+              helping companies to reach their highest level. We optimize business processes, making them easier.</p>
+
+                <button class="btn  bnr-btn" type="submit">Get Started </button>
+       </div>
+
+      </div>
+
+    </section>
+    <!-- number section -->
+
+    <section class="number">
+      <div class="container ">
+  <div class="row">
+    <div class="col-lg-3 col-sm-6">
+    <span id="count1" class="display-4"></span>+
+    <p>Projects Done</p>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+    <span id="count2" class="display-4"></span>M
+      <p>Users Worldwide</p>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+      <span id="count3" class="display-4"></span>
+      <p>Available Country</p>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+    <span id="count4" class="display-4"></span>
+      <p>Award Winner</p>
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <!-- our service -->
+
+    <section class="services">
+      <div class="container fade">
+        <h5>Our Services</h5>
+        <h2>We provide a wide range of <br>
+           creative services</h2>
+           <div class="row py-4 my-2">
+           <div class="col-lg-4 col-sm-12">
+
+       <h3> <i class="fa-solid fa-desktop fa-2x"></i>Web development.</h3>
+       <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+   </div>
+   <div class="col-lg-4 col-sm-12">
+
+       <h3> <i class="fa-solid fa-layer-group fa-2x"></i>Interface Design.</h3>
+       <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+   </div>
+   <div class="col-lg-4 col-sm-12">
+     <h3><i class="fa-solid fa-chart-line fa-2x"></i>Business Consulting.</h3>
+     <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+   </div>
+ </div>
+ <div class="row py-4 my-2">
+   <div class="col-lg-4 col-sm-12">
+     <h3><i class="fa-solid fa-robot fa-2x"></i>App development.</h3>
+     <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+   </div>
+   <div class="col-lg-4 col-sm-12">
+     <h3><i class="fa-solid fa-bezier-curve fa-2x"></i>Branding</h3>
+     <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+   </div>
+   <div class="col-lg-4 col-sm-12">
+     <h3><i class="fa-solid fa-pen-to-square fa-2x"></i>Content creation.</h3>
+     <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+   </div>
+ </div>
+
+      </div>
+
+    </section>
+    <!-- parallax section -->
+
+    <section class="five">
+      <div class="container-fluid">
+
+          <div class="container fade ">
+            <div class="row">
+              <div class="col-lg-5 col-sm-8 fifth-intro">
+                <h5>We create for you</h5>
+                <h2>Entrust Your Project
+                  <br> to Our Best Team of
+                   <br> Professionals</h2>
+                <h4>Have any project on mind?
+                  <br>For immidiate support :</h4>
+                  <h3><i class="fa-solid fa-mobile-screen-button"></i> +23 876 65 455</h3>
+              </div>
+              <div class="col-lg-7 col-sm-4">
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+    </div>
+    </section>
+
+<!-- carousal section -->
+<section class="caro">
+  <div class="container">
+    <h5>Clients testimonial</h5>
+    <h2>Check what's our clients say about us</h2>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row mx-2 px-2">
+          <div class="col-lg-6">
+            <p><i class="fa-solid fa-quote-left fa-3x"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <h4>James Wattson</h4>
+            <h6>Excuitve Director,Themefisher</h6>
+          </div>
+          <div class="col-lg-6">
+            <p><i class="fa-solid fa-quote-left fa-3x"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <h4>Michal Hussey</h4>
+            <h6>Excuitve Director,SharkTank</h6>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="carousel-item">
+
+        <div class="row mx-2 px-2">
+          <div class="col-lg-6">
+            <p><i class="fa-solid fa-quote-left fa-3x"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <h4>James Wattson</h4>
+            <h6>Thomas Johnson,Lex Corp</h6>
+          </div>
+          <div class="col-lg-6">
+            <p><i class="fa-solid fa-quote-left fa-3x"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <h4>Thomas Wayne</h4>
+            <h6>Excuitve Director,Wayne Enterprise</h6>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- news section -->
+
+<section class="news">
+  <div class="container fade">
+    <h5>Latest News</h5>
+    <h2>Latest articles to enrich <br> knowledge</h2>
+    <div class="container">
+  <div class="row fade">
+    <div class="col-lg-4 col-sm-12">
+      <img class="img-fluid news-img"src="image/1.jpg" alt="">
+      <h4>Design / Ui/Ux / Admin</h4>
+      <h3><a href="#">How to improve design with Typography ?</a></h3>
+        <button class="btn btn-outline-danger" type="submit">GET A QUOTE</button>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <img  class="img-fluid news-img" src="image/2.jpg" alt="">
+      <h4>Design / Ui/Ux / Admin</h4>
+      <h3> <a href="#">Interactive design may connect with customer</a></h3>
+        <button class="btn btn-outline-danger" type="submit">GET A QUOTE</button>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <img  class="img-fluid news-img" src="image/3.jpg" alt="">
+      <h4>Design / Ui/Ux / Admin</h4>
+      <h3><a href="#">Marketing strategy to bring more affect</a></h3>
+        <button class="btn btn-outline-danger" type="submit">GET A QUOTE</button>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+</section>
+
+
+<section class="six">
+  <div class="container sixth">
+    <h5>For Every type business</h5>
+    <div class="row six-intro">
+      <div class="col-lg-8 col-sm-12">
+        <h2>Entrust Your Project to Our Best
+          <br>
+           Team of Professionals</h2>
+      </div>
+
+      <div class="col-lg-4 col-sm-12">
+        <button type="button" class="btn foot-intro-btn">CONTACT US</button>
+      </div>
+    </div>
+ </div>
+</section>
+
+    <!-- footer -->
+
+    <footer>
+<div class="container">
+  <div class="row foot-cards">
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <h3>Company</h3>
+      <ul>
+        <li> <a href="#">Terms & Conditions</a> </li>
+          <li> <a href="#">Privacy Policy</a> </li>
+            <li> <a href="#">Support</a> </li>
+              <li> <a href="#">FAQ</a> </li>
+
+      </ul>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <h3>Quick Links</h3>
+      <ul>
+        <li> <a href="#">About</a> </li>
+          <li> <a href="#">Services</a> </li>
+            <li> <a href="#">Blogs</a> </li>
+              <li> <a href="#">Contact</a> </li>
+
+      </ul>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <h3>Subscribe Us</h3>
+      <ul>
+        <li>Subscribe to get latest News
+        <br>article & resources </li>
+        <li>  <button type="button" class="btn btn-danger">SUBSCRIBE</button></li>
+      </ul>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <h3>Megakit.</h3>
+      <ul>
+        <li> <a href="#">Support@megakit.com</a> </li>
+        <li><h4>+23-456-7890</h4></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="row ">
+    <div class="col-lg-6">
+      <h6>Copyright © 2022,Designed & Developed by <b>XS RAY</b></h6>
+
+    </div>
+    <div class="col-lg-6  foot-social">
+      <h6>  <i class="fa-brands fa-facebook-square fa-xl"></i>Facebook</h6>
+      <h6>  <i class="fa-brands fa-twitter fa-xl"></i>Twitter</h6>
+    <h6><i class="fa-brands fa-pinterest-p fa-xl"></i>Pinterest</h6>
+    </div>
+
+  </div>
+
+</div>
+
+    </footer>
+
+<!-- java script -->
+
+<script  src="js/script.js"> </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  </body>
+</html>
